@@ -1,8 +1,9 @@
 # CP_2020_HW7 -  GUI Forms - Customer Form
 
-Please work on the implementation of the CustomerData Form.
+Please work on the implementation of the CustomerData Form. 
 In particular:
 
+0. Run "BankFrame" to see if the GUI starts correctly.
 1. Add the implementation of the "New" button - it should clear all text fields including the "customerIDtextField". 
 2. Change the implementation of the "Send" button so that it performs "insert or update" - that is, in case the 
 "customerIDtextField" is empty it runs bank.newCustomer... or when it is set some value then updates the properties 
