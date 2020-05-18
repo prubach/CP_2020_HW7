@@ -1,13 +1,34 @@
 package pl.waw.sgh.bank;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bank {
+public class Bank implements Serializable {
 
     private List<Customer> customerList = new ArrayList<>();
 
     private List<Account> accountList = new ArrayList<>();
+
+    public Customer nextCustomer(Customer curCustomer) {
+        int curCustIdx = customerList.indexOf(curCustomer);
+        if ((curCustIdx >= 0) && (curCustIdx < customerList.size()-1)) {
+            return customerList.get(curCustIdx+1);
+        } else {
+            return null;
+        }
+    }
+
+    public Customer previousCustomer(Customer curCustomer) {
+        int curCustIdx = customerList.indexOf(curCustomer);
+        if (curCustIdx > 0) {
+            return customerList.get(curCustIdx-1);
+        } else {
+            return null;
+        }
+    }
+
+
 
     public Customer newCustomer(String firstName, String lastName, String email) {
         Customer c = new Customer(firstName, lastName, email);
